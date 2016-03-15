@@ -29,6 +29,7 @@ curl_setopt($session, CURLOPT_HEADER, true);
 curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($session, CURLOPT_USERPWD, $MerchantId.':'.$APIKey);
 curl_setopt($session, CURLOPT_SSL_CIPHER_LIST, 'TLSv1');
+//When on production mode, you need to comment the last CURL command (CURLOPT_SSL_CIPHER_LIST), else there will be no response at all from the API host
 
 // Do the POST and then close the session
 $response = curl_exec($session);
